@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<script src="./js/jquery-2.1.3.min.js"></script>
+<link rel="stylesheet" href="./sample.css">
+<title>たすけてミラえもん！</title>
+</head>
+<body>
+
+<header>
+  <h1 class="headert_text"><p>たすけてミラえもん！</p></h1>
+</header>
+
+<main>
+
+  <!-- ノビビジュアル -->
+  <div class="nobi_visual">
+    
+    <div class="nobita">
+      <img src="./img/comment.png" alt="">
+      <div class="nobita_comment">うわ～ん</div>
+    </div>
+
+    <div class="nobita_image"><img src="./img/souta.jpg" alt=""></div>
+
+  </div>
+
+  <!-- どらビジュアル -->
+  <div class="dora_visual">
+
+    <div class="dora">
+      <img src="./img/comment.png" alt="">
+      <div class="dora_comment">
+      <p> そう太くん</p> 
+      <p>どうしたの？</p> 
+      </div>
+    </div>
+    <div><img src="./img/miraemon.png" alt=""></div>
+  </div>
+
+  <p>↓から、そう太くんの状況を選んでね</p>
+
+  
+
+  <!-- 選択肢 -->
+  <ul>
+    <li class="foreigner btn" playernum="1"><p>外国人に話しかけられた！</p></li>
+    <li class="cold btn" playernum="2"><p>寒い！</p></li>
+    <li class="sleep btn" playernum="3"><p>寝坊した！</p></li>
+  </ul>
+
+  <!-- 結果 -->
+  <div>ミラえもん「そう太君にはこれをあげるよ」</div>
+  <div id="pc_hands"><p></p></div>
+  <div id="judgment">そう太「？」</div>
+</main>
+
+<footer></footer>
+<script>
+
+$(document).ready(function () {
+    //アニメーションスピード
+    var scrollSpeed = 0.2;
+    //画像サイズ
+    var imgWidth = 600;
+    //画像の初期位置
+    var posX = 0;
+    //ループ処理
+    setInterval(function(){
+        //画像のサイズまで移動したら0に戻る。
+        if (posX >= imgWidth) posX= 0;
+        //scrollSpeed分移動
+        posX += scrollSpeed;
+        $("header").css("background-position",posX+"px 0px");
+    }, 1);
+});
+
+$(".btn").click(function(){
+      const pc = Math.round(Math.random()*3);
+      const user = $(this).attr("playernum");
+      
+      if(pc==1){
+      $("#pc_hands").text("ほんやくいも！");
+      }else if (pc==2){
+      $("#pc_hands").text("風の王者バンド！");
+      }else if (pc==3){
+      $("#pc_hands").text("クキコプター！");
+      };
+
+      $("#pc_hands").animate({
+      'fontSize': '128px'
+      }, 2000);
+
+      const result =(function(){
+        if(user == 1 && pc == 1) return '【当たり】そう太「助かった～！Hi, how are you doing?」';
+        if(user == 1 && pc == 2) return '【はずれ】そう太「なにこれ、、ぼく天国に行っちゃうの？」';
+        if(user == 1 && pc == 3) return '【当たり？】そう太「『逃げるは恥だが役に立つ』だもんね。この場から逃げるよ、バイバ～イ！」';
+        if(user == 2 && pc == 1) return '【はずれ】そう太「$f5&ghke...」';
+        if(user == 2 && pc == 2) return "【当たり】そう太「ふう～！もう寒さなんてへっちゃら！」";
+        if(user == 2 && pc == 3) return '【当たり？】そう太「やったー！これを使ってハワイに行ってくるよ！宿題よろしくね!」';
+        if(user == 3 && pc == 1) return '【はずれ】そう太「gakko kyou ikanakute iidesuka?」';
+        if(user == 3 && pc == 2) return '【はずれ】そう太「なにこれ～！？頭痛いよ～もう学校いけないよ～」';
+        if(user == 3 && pc == 3) return '【当たり】そう太「学校へひとっとび！行ってきま～す！」';
+      });
+      $("#judgment").text(result);		
+
+      
+
+});
+
+
+
+
+</script>
+</body>
+</html>

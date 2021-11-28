@@ -1,0 +1,147 @@
+/*全体 */
+body{
+    margin:0;
+    padding:0;
+    font-size: 32px;
+    background-color: #A6E9FF;
+}
+
+p{
+    text-align: center;
+    margin: 10px;
+}
+
+/* ヘッダー */
+
+header{
+    width: 100%;
+    height: 70px;
+    background-image: url(./img/suzu.png);
+    margin: 20px;
+}
+
+header p{
+    color: black;
+    font-size : 50px;
+    font-weight: bold;
+}
+
+.header_text{
+    height: 100%;
+    background-color: rgba(134, 32, 32, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ノビビジュアル */
+.nobi_visual{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    margin: auto;
+}
+
+.nobita{
+    text-align: center;
+    position: relative;
+}
+
+.nobita_comment{
+    position: absolute;
+    width: auto;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-40%, -50%, 0);
+    text-align: center;
+    margin: auto;
+    letter-spacing: 0.1em;
+}
+
+/* どらビジュアル*/
+.dora_visual{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    height: auto;
+    margin: auto;
+}
+
+.dora{
+    text-align: center;
+    position: relative;
+}
+
+.dora_comment{
+    position: absolute;
+    width: auto;
+    top: 40%;
+    left: 50%;
+    transform: translate3d(-40%, -50%, 0);
+    text-align: center;
+    margin: auto;
+    letter-spacing: 0.1em;
+}
+
+
+/* 選択肢 */
+ul{
+    margin: 0, auto;
+    padding: 0;
+    border-top: 1px solid #000000;
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+li{
+    flex: 1;
+    text-align: center;
+    border: 1px solid #666;
+    background-color: #FFF;
+    cursor: pointer;
+    list-style: none;
+    height: 300px;
+    width: 100px;
+}
+
+
+.foreigner{
+    background-image: url(./img/foreigner.png);
+    background-size: cover;
+}
+
+.cold{
+    background-image:url(./img/cold.png);
+    background-size: cover;
+}
+
+.sleep{
+    background-image: url(./img/sleep.png);
+    background-size:cover;
+}
+
+.btn p{
+    margin: auto;
+    height: 100%;
+	font-weight: bold;
+	color: transparent;
+	transition: 0.5s;
+}
+
+.btn:hover p{
+    background:rgba(221, 220, 212, 0.55) ;
+    color: red;
+    vertical-align: middle
+}
+
+/* 結果 */
+#pc_hands {
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: unset;
+    text-align: center;
+    color: red;
+}
